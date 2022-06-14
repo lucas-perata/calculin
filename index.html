@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Archivo CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Rubik:ital,wght@0,300;1,300&display=swap" rel="stylesheet"> 
+    <title>Calculá tu préstamo</title>
+</head>
+<body>
+    <header>
+        <h1>Calculadora de préstamos</h1>
+    </header>
+
+    <main>
+
+        <section class="info">
+            <div class="container">
+                <h2>Calculadora y simulador de préstamos personales</h2>
+                <p> Usa esta calculadora para ver cómo los pagos de tu préstamo personal se desglosan mes a mes.</p>
+            </div>
+        </section>
+        
+
+            <section class="formulario" id="calcular">
+                <div class="container">
+                    <h2>Calculadora:</h2>
+            <form action="">
+                <label for="monto">Monto a solicitar:</label>
+                <input type="number"> <br>
+                <label for="cuotas">Número de cuotas:</label>
+                <select name="cuotas" id=""> 
+                    <option value="3">3</option>
+                    <option value="6">6</option>
+                    <option value="12">12</option>
+                </select> <br>
+                <label for="interes">Tasa anual de interés (TNA):</label>
+                <input type="number"> <br>
+                <button>Calcular</button>
+            </form>
+                </div>
+            </section>
+    
+            
+            <section class="resultados">
+                <div class="container">
+                    <h2>Tus préstamos</h2>
+                    <div>Monto a solicitar:</div>
+                    <div>Total a pagar:</div>
+                    <div>Pago mensual:</div>
+                    <div>Número de cuotas:</div>
+                    <div>TNA:</div>
+                </div>
+            </section>
+    </main>
+
+    <footer>
+        <div class="text-footer">&copy; Proyecto Coderhouse - En progreso</div>
+    </footer>
+
+    <script src="script.js"> </script>
+</body>
+</html>
