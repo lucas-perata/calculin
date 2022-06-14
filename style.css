@@ -13,20 +13,35 @@
     --radio: 5px;
 }
 
+h1 {
+    font-weight: bolder;
+    color: var(--color-white);
+}
+
 body {
     line-height: 1.5;
     font-family: 'Roboto', sans-serif;
-    
 }
 
 header {
     background-color: var(--color-main);
     padding: var(--padding);
     height: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header i {
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+header a {
+    color: black;
 }
 
 main {
-
     display: flex;
     align-items: center;
     justify-content: center;
