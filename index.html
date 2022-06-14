@@ -18,13 +18,16 @@
     <title>Calculá tu préstamo</title>
 </head>
 <body>
+
+    <!-- HEADER -->
     <header>
         <h1>Calculadora de préstamos</h1>
        <a href="https://github.com/lucas-perata/javascript_coder" target="_blank"> <i class="fa-brands fa-github"></i> </i></a> 
     </header>
 
+    <!-- MAIN -->
     <main>
-
+    <!-- INFO -->
         <section class="info">
             <div class="container">
                 <h2>Calculadora y simulador de préstamos personales</h2>
@@ -32,7 +35,8 @@
             </div>
         </section>
 
-            <section class="formulario" id="calcular">
+    <!-- CALCULADORA -->
+        <section class="formulario" id="calcular">
                 <div class="container">
                     <h2>Calculadora:</h2>
             <form action="">
@@ -43,31 +47,35 @@
                     <option value="3">3</option>
                     <option value="6">6</option>
                     <option value="12">12</option>
+                    <option value="18">18</option>
+                    <option value="24">24</option>
                 </select> <br>
                 <label for="interes">Tasa anual de interés (TNA):</label>
                 <input type="number"> <br>
                 <button>Calcular</button>
             </form>
                 </div>
-            </section>
+        </section>
     
-            
-            <section class="resultados">
-                <div class="container">
-                    <h2>Tus préstamos</h2>
-                    <div>Monto a solicitar:</div>
-                    <div>Total a pagar:</div>
-                    <div>Pago mensual:</div>
-                    <div>Número de cuotas:</div>
-                    <div>TNA:</div>
-                </div>
-            </section>
+    <!-- RESULTADOS -->
+        <section class="resultados">
+            <div class="container">
+                <h2>Tus préstamos</h2>
+                <div>Monto a solicitar:</div>
+                <div>Total a pagar:</div>
+                <div>Pago mensual:</div>
+                <div>Número de cuotas:</div>
+                <div>TNA:</div>
+            </div>
+         </section>
     </main>
 
+    <!-- FOOTER -->
     <footer>
         <div class="text-footer">&copy; Proyecto Coderhouse - En progreso</div>
     </footer>
 
+    <!-- Javascript -->
     <script src="script.js"> </script>
 </body>
 </html>

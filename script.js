@@ -48,17 +48,15 @@ function calculoPrestamos(){
 
 // Resumen de cada préstamo
 
-function prestamoFinal(prestamos){
+function resumenPrestamos(prestamos){
 
     let n = 1; 
 
     prestamos.forEach(element => {
-    alert("Tu préstamo número " + n + "  por el monto de " + element.monto + " peso tiene un interés de " + element.interes 
+    alert("Tu préstamo número " + n + " por el monto de " + element.monto + " pesos tiene un interés de " + element.interes 
     + " por ciento dividido en " + element.cuotas + " pagos." )
     n++
     }) 
-
-    alert("¡Gracias por usar la calculadora!")
 
 }
 
@@ -68,9 +66,9 @@ function simulacionPrestamo() {
 
     calculoPrestamos()
 
-    prestamoFinal(prestamos)
+    resumenPrestamos(prestamos)
 
+    alert("¡Gracias por usar la calculadora!")
 };
 
-
-simulacionPrestamo()
+ simulacionPrestamo()
