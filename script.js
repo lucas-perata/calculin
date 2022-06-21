@@ -39,9 +39,10 @@ function calculoPrestamos(){
         const prestamo = new Prestamo(monto, interes, cuotas)
     
         prestamos.push(prestamo)
-    
+        
+        if (numeroPrestamos > 1){
         alert("El interés de tu préstamo es de: " + prestamo.calcularIntereses() + "\nEl monto final a pagar es: " 
-             + prestamo.calcularMontoFinal() + " en " + cuotas + " pagos de " + prestamo.calcularPagoMensual() + " pesos.")
+             + prestamo.calcularMontoFinal() + " en " + cuotas + " pagos de " + prestamo.calcularPagoMensual() + " pesos.")}
     }
 }
 
@@ -56,14 +57,18 @@ function resumenPrestamos(prestamos){
         let resultadosContainer = document.createElement("div")
 
         resultadosContainer.innerHTML = `
-                                <h2>Prestamo ${n}</h2>
+                                <div class="resumen">
+                                    <div class="prestamo-info"> 
+                                <h3>Prestamo ${n}</h3>
                                 <div>Monto a solicitar: ${element.monto} </div>
                                 <div>Total a pagar: ${element.calcularMontoFinal()}</div>
                                 <div>Pago mensual: ${element.calcularPagoMensual()} </div>
                                 <div>Número de cuotas: ${element.cuotas} </div>
-                                <div>TNA: ${element.interes} % </div>`
+                                <div>TNA: ${element.interes} % </div>
+                                </div>
+                                </div>`
 
-        document.querySelector(".resultados").appendChild(resultadosContainer)
+        document.querySelector(".resumen").appendChild(resultadosContainer)
 
     n++
     }) 
