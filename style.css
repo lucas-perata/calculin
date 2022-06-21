@@ -93,3 +93,8 @@ footer{
 .info{
     margin-top: 5rem;
 }
+
+section.resultados {
+    display: flex;
+    gap: 2rem;
+}

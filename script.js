@@ -18,7 +18,6 @@ class Prestamo {
          this.pagoMensual = this.montoFinal/this.cuotas
          return this.pagoMensual.toFixed(2)
     }
-
 }
 
 // Array
@@ -33,7 +32,7 @@ function calculoPrestamos(){
 
     for (let index = numeroPrestamos; index > 0; index--) {
 
-        let monto = parseInt(prompt("Monto a pagar:"))
+        let monto = parseInt(prompt("Monto a solicitar:"))
         let cuotas = parseInt(prompt("Número de cuotas:")) 
         let interes = parseInt(prompt("Interés del préstamo (TNA):")) 
     
@@ -53,8 +52,19 @@ function resumenPrestamos(prestamos){
     let n = 1; 
 
     prestamos.forEach(element => {
-    alert("Tu préstamo número " + n + " por el monto de " + element.monto + " pesos tiene un interés de " + element.interes 
-    + " por ciento dividido en " + element.cuotas + " pagos." )
+
+        let resultadosContainer = document.createElement("div")
+
+        resultadosContainer.innerHTML = `
+                                <h2>Prestamo ${n}</h2>
+                                <div>Monto a solicitar: ${element.monto} </div>
+                                <div>Total a pagar: ${element.calcularMontoFinal()}</div>
+                                <div>Pago mensual: ${element.calcularPagoMensual()} </div>
+                                <div>Número de cuotas: ${element.cuotas} </div>
+                                <div>TNA: ${element.interes} % </div>`
+
+        document.querySelector(".resultados").appendChild(resultadosContainer)
+
     n++
     }) 
 
@@ -68,7 +78,7 @@ function simulacionPrestamo() {
 
     resumenPrestamos(prestamos)
 
-    alert("¡Gracias por usar la calculadora!")
 };
+
 
  simulacionPrestamo()
