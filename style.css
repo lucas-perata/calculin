@@ -29,7 +29,7 @@ header {
     padding: var(--padding);
     height: 20%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -85,12 +85,15 @@ input[type=number]{
     display: flex;
     gap: 2rem;
     flex-wrap: wrap;
+    margin-top: 1rem;
+
 }
 
-.prestamo-info {
-    margin-top: 2rem;
-    text-justify: distribute;
+
+div.button {
+    margin-top: 1rem;
 }
+
 
 footer{
     background-color: var(--color-main);

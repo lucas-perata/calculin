@@ -75,6 +75,23 @@ function resumenPrestamos(prestamos){
 
 }
 
+// boton para eliminar prestamos 
+
+
+function eliminarPrestamos(){
+    let buttonPrestamos = document.createElement("div")
+    buttonPrestamos.classList.add("button");
+
+    buttonPrestamos.innerHTML = `<button class="eliminar">Eliminar</button> `
+
+    document.querySelector(".resultados").appendChild(buttonPrestamos)
+
+    document.querySelector(".eliminar").addEventListener("click", () => {
+        document.querySelector(".resumen").innerHTML = " "
+        document.querySelector(".button").remove()
+    })
+}
+
 // Funcion que muestra el resultado para cada prestamo y el resumen final
 
 function simulacionPrestamo() {
@@ -83,6 +100,8 @@ function simulacionPrestamo() {
 
     resumenPrestamos(prestamos)
 
+    eliminarPrestamos()
+    
 };
 
 
