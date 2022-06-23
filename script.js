@@ -11,7 +11,7 @@ class Prestamo {
     }
 
     calcularMontoFinal(){
-        return this.montoFinal = this.intereses + this.monto
+         return this.montoFinal = (this.intereses + this.monto)
     }
 
     calcularPagoMensual(){
@@ -24,63 +24,44 @@ class Prestamo {
 
 let prestamos = []
 
- // Loop cantidad de préstamos a calcular
+ // Esta función toma los numeros registrados por el usuario e imprime los préstamos en el HTML
 
 function calculoPrestamos(){
 
-    let numeroPrestamos = parseInt(prompt("¿Cuántos préstamos quieres calcular?"))
-
-    for (let index = numeroPrestamos; index > 0; index--) {
-
-        let monto = parseInt(prompt("Monto a solicitar:"))
-        let cuotas = parseInt(prompt("Número de cuotas:")) 
-        let interes = parseInt(prompt("Interés del préstamo (TNA):")) 
+        let monto = parseInt(document.querySelector(".monto").value)
+        let cuotas = document.querySelector(".pagos").value
+        let interes = document.querySelector(".interes").value
     
         const prestamo = new Prestamo(monto, interes, cuotas)
-    
+
         prestamos.push(prestamo)
         
-        if (numeroPrestamos > 1){
-        alert("El interés de tu préstamo es de: " + prestamo.calcularIntereses() + "\nEl monto final a pagar es: " 
-             + prestamo.calcularMontoFinal() + " en " + cuotas + " pagos de " + prestamo.calcularPagoMensual() + " pesos.")}
-    }
-}
-
-// Resumen de cada préstamo
-
-function resumenPrestamos(prestamos){
-
-    let n = 1; 
-
-    prestamos.forEach(element => {
-
         let resultadosContainer = document.createElement("div")
 
         resultadosContainer.innerHTML = `
                                 <div class="resumen">
                                     <div class="prestamo-info"> 
-                                <h3>Prestamo ${n}</h3>
-                                <div>Monto a solicitar: ${element.monto} </div>
-                                <div>Total a pagar: ${element.calcularMontoFinal()}</div>
-                                <div>Pago mensual: ${element.calcularPagoMensual()} </div>
-                                <div>Número de cuotas: ${element.cuotas} </div>
-                                <div>TNA: ${element.interes} % </div>
+                                <h3 id="info-prestamo">Prestamo ${document.querySelectorAll("#info-prestamo").length + 1} </h3>
+                                <div>Monto a solicitar: ${prestamo.monto} </div>
+                                <div>Intereses: ${prestamo.calcularIntereses()}</div>
+                                <div>Total a pagar: ${prestamo.calcularMontoFinal()}</div>
+                                <div>Pago mensual: ${prestamo.calcularPagoMensual()} </div>
+                                <div>Número de cuotas: ${prestamo.cuotas} </div>
+                                <div>TNA: ${prestamo.interes} % </div>
                                 </div>
                                 </div>`
 
         document.querySelector(".resumen").appendChild(resultadosContainer)
 
-    n++
-    }) 
-
 }
 
-// boton para eliminar prestamos 
-
+// Boton para eliminar los préstamos
 
 function eliminarPrestamos(){
+
+
+    if (!document.querySelector(".eliminar")){
     let buttonPrestamos = document.createElement("div")
-    buttonPrestamos.classList.add("button");
 
     buttonPrestamos.innerHTML = `<button class="eliminar">Eliminar</button> `
 
@@ -88,8 +69,9 @@ function eliminarPrestamos(){
 
     document.querySelector(".eliminar").addEventListener("click", () => {
         document.querySelector(".resumen").innerHTML = " "
-        document.querySelector(".button").remove()
-    })
+        document.querySelector(".eliminar").remove()
+    })}
+    
 }
 
 // Funcion que muestra el resultado para cada prestamo y el resumen final
@@ -98,11 +80,12 @@ function simulacionPrestamo() {
 
     calculoPrestamos()
 
-    resumenPrestamos(prestamos)
-
     eliminarPrestamos()
     
 };
 
+// Boton que ejecuta la función para simular los prestamos
 
- simulacionPrestamo()
+document.querySelector('.calculo').addEventListener("click", simulacionPrestamo)
+
+
