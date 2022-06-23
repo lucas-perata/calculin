@@ -53,6 +53,15 @@ function calculoPrestamos(){
 
         document.querySelector(".resumen").appendChild(resultadosContainer)
 
+       
+
+}
+
+// Limpiar calculadora 
+
+function reseteoCalculadora(){
+    let a = document.querySelector("form")
+    a.reset()
 }
 
 // Boton para eliminar los préstamos
@@ -79,6 +88,8 @@ function eliminarPrestamos(){
 function simulacionPrestamo() {
 
     calculoPrestamos()
+
+    reseteoCalculadora()
 
     eliminarPrestamos()
     
