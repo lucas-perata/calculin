@@ -51,11 +51,15 @@ main {
     flex-direction: column;
 }
 
+section {
+    min-width: 40vw;
+}
+
 .formulario {
-    padding: var(--padding);
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    padding: var(--padding);
+
 }
 
 form {
@@ -114,7 +118,7 @@ footer{
 }
 
 .info{
-    margin-top: 5rem;
+    padding: var(--padding);
 }
 
 @media only screen and (max-width: 768px) {
