@@ -26,22 +26,14 @@ let prestamos = []
 
  // Esta función toma los numeros registrados por el usuario e imprime los préstamos en el HTML
 
-function calculoPrestamos(){
+function calculoPrestamos(monto, cuotas, interes){
 
-        let monto = parseInt(document.querySelector(".monto").value)
-        let cuotas = document.querySelector(".pagos").value
-        let interes = document.querySelector(".interes").value
-
-        if(!monto || !cuotas || interes == "") 
-        {alert("Completa todos los campos solicitados")}
-        else {
-            const prestamo = new Prestamo(monto, interes, cuotas)
+        const prestamo = new Prestamo(monto, interes, cuotas)
 
         prestamos.push(prestamo)
         
         localStorage.setItem('prestamo', JSON.stringify(prestamos))
 
-        
         let resultadosContainer = document.createElement("div")
 
         resultadosContainer.innerHTML = `
@@ -60,7 +52,6 @@ function calculoPrestamos(){
         document.querySelector(".resumen").appendChild(resultadosContainer)
 
         eliminarPrestamos()
-        }
 }
 
 // Limpiar calculadora 
@@ -74,7 +65,6 @@ function reseteoCalculadora(){
 
 function eliminarPrestamos(){
 
-
     if (!document.querySelector(".eliminar")){
     let buttonPrestamos = document.createElement("div")
 
@@ -86,17 +76,23 @@ function eliminarPrestamos(){
         document.querySelector(".resumen").innerHTML = " "
         document.querySelector(".eliminar").remove()
     })}
-    
 }
 
-// Funcion que muestra el resultado para cada prestamo y el resumen final
+// Funcion final que engloba los procedimientos de la página
 
 function simulacionPrestamo() {
 
-    calculoPrestamos()
+    let monto = parseInt(document.querySelector(".monto").value)
+    let cuotas = document.querySelector(".pagos").value
+    let interes = document.querySelector(".interes").value
 
-    reseteoCalculadora()
-    
+    if(!monto || !cuotas || interes == "") {
+        alert("Completa todos los campos solicitados")
+        } 
+    else {
+        calculoPrestamos(monto, cuotas, interes)
+        reseteoCalculadora()
+    }
 };
 
 // Boton que ejecuta la función para simular los prestamos

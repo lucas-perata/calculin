@@ -1,8 +1,10 @@
 class Usuario {
+    
     constructor(nombre, email){
         this.nombre = nombre
         this.email = email
     }
+
 }
 
 // Array para almacenar usuario
@@ -32,36 +34,34 @@ function registroUsuario(){
 function comprobaciónRegistro(){
     if (sessionStorage.getItem("dato")) {
         console.log("Usuario reconocido")
+        // Se carga la página normalmente
     }
     else {  let usuarioNuevo = document.createElement("div")
     
     usuarioNuevo.innerHTML = `
-    <section class="formulario-usuario">
-    <div class="container">
-        <h2>Ingreso:</h2>
-    <form name="usuarios" action="">
-    <label for="nombre">Nombre:</label>
-    <input class="nombre" type="text"> <br>
-    <label for="mail">Email:</label>
-    <input type="email" class="email"> <br>
-    
-    <button class="ingreso" type="submit">Ingresar</button>
-    </form>
-    </div>
-    </section>
-                            
-                            `
+                        <section class="formulario-usuario">
+                            <div class="container">
+                                <h2>Ingreso:</h2>
+                            <form name="usuarios" action="">
+                            <label for="nombre">Nombre:</label>
+                            <input class="nombre" type="text"> <br>
+                            <label for="mail">Email:</label>
+                            <input type="email" class="email"> <br>
+                            <button class="ingreso" type="submit">Ingresar</button>
+                            </form>
+                            </div>
+                        </section>   `
+
     document.querySelector("main").innerHTML = " "
     document.querySelector("main").appendChild(usuarioNuevo)}
 }
 
-// funcionamiento de la página
+// funcionamiento de la página - Espera a que esté todo cargado
 
 document.addEventListener("DOMContentLoaded", function() { 
 
     document.querySelector(".ingreso").addEventListener("click", registroUsuario)
     
 });
-
 
 comprobaciónRegistro()
