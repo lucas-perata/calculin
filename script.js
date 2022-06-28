@@ -31,8 +31,11 @@ function calculoPrestamos(){
         let monto = parseInt(document.querySelector(".monto").value)
         let cuotas = document.querySelector(".pagos").value
         let interes = document.querySelector(".interes").value
-    
-        const prestamo = new Prestamo(monto, interes, cuotas)
+
+        if(!monto || !cuotas || interes == "") 
+        {alert("Completar todos los campos")}
+        else {
+            const prestamo = new Prestamo(monto, interes, cuotas)
 
         prestamos.push(prestamo)
         
@@ -55,6 +58,10 @@ function calculoPrestamos(){
                                 </div>`
 
         document.querySelector(".resumen").appendChild(resultadosContainer)
+
+        eliminarPrestamos()
+        }
+        
 
        
 
@@ -93,8 +100,6 @@ function simulacionPrestamo() {
     calculoPrestamos()
 
     reseteoCalculadora()
-
-    eliminarPrestamos()
     
 };
 
