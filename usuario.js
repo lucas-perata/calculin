@@ -16,7 +16,7 @@ let datos = []
 function registroUsuario(){
     const nombre =  document.querySelector(".nombre").value 
     const email =  document.querySelector(".email").value 
-    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    let validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
     if (email.match(validRegex) && nombre != ""){
         let usuario = new Usuario(nombre, email)
