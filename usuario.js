@@ -23,7 +23,7 @@ function registroUsuario(){
         sessionStorage.setItem('dato', JSON.stringify(datos))
     }
     else {
-        alert("Error")
+        
     }
 }
 
