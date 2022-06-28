@@ -36,7 +36,7 @@ function comprobaciónRegistro(){
     else {  let usuarioNuevo = document.createElement("div")
     
     usuarioNuevo.innerHTML = `
-    <section class="formulario">
+    <section class="formulario-usuario">
     <div class="container">
         <h2>Ingreso:</h2>
     <form name="usuarios" action="">
