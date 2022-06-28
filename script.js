@@ -61,10 +61,6 @@ function calculoPrestamos(){
 
         eliminarPrestamos()
         }
-        
-
-       
-
 }
 
 // Limpiar calculadora 
