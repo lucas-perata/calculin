@@ -16,14 +16,14 @@ function registroUsuario(){
     const email =  document.querySelector(".email").value 
     var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
-    if (email.match(validRegex)){
+    if (email.match(validRegex) && nombre != ""){
         let usuario = new Usuario(nombre, email)
         console.log(usuario)
         datos.push(usuario)
         sessionStorage.setItem('dato', JSON.stringify(datos))
     }
     else {
-        
+        alert("Comprueba la información solicitada")
     }
 }
 
@@ -45,7 +45,7 @@ function comprobaciónRegistro(){
     <label for="mail">Email:</label>
     <input type="email" class="email"> <br>
     
-    <button class="ingresos">Ingresar</button>
+    <button class="ingreso" type="submit">Ingresar</button>
     </form>
     </div>
     </section>
@@ -59,7 +59,7 @@ function comprobaciónRegistro(){
 
 document.addEventListener("DOMContentLoaded", function() { 
 
-    document.querySelector(".ingresos").addEventListener("click", registroUsuario)
+    document.querySelector(".ingreso").addEventListener("click", registroUsuario)
     
 });
 

@@ -33,7 +33,7 @@ function calculoPrestamos(){
         let interes = document.querySelector(".interes").value
 
         if(!monto || !cuotas || interes == "") 
-        {alert("Completar todos los campos")}
+        {alert("Completa todos los campos solicitados")}
         else {
             const prestamo = new Prestamo(monto, interes, cuotas)
 
