@@ -36,6 +36,9 @@ function calculoPrestamos(){
 
         prestamos.push(prestamo)
         
+        localStorage.setItem('prestamo', JSON.stringify(prestamos))
+
+        
         let resultadosContainer = document.createElement("div")
 
         resultadosContainer.innerHTML = `
