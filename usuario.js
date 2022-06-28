@@ -5,17 +5,29 @@ class Usuario {
     }
 }
 
+// Array para almacenar usuario
+
 let datos = []
+
+// Funcion que registra al usuario nuevo
 
 function registroUsuario(){
     const nombre =  document.querySelector(".nombre").value 
     const email =  document.querySelector(".email").value 
+    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
-    let usuario = new Usuario(nombre, email)
-    console.log(usuario)
-    datos.push(usuario)
-    sessionStorage.setItem('dato', JSON.stringify(datos))
+    if (email.match(validRegex)){
+        let usuario = new Usuario(nombre, email)
+        console.log(usuario)
+        datos.push(usuario)
+        sessionStorage.setItem('dato', JSON.stringify(datos))
     }
+    else {
+        alert("Error")
+    }
+}
+
+// Función que analiza si hay informacion sobre el usuario en storage
 
 function comprobaciónRegistro(){
     if (sessionStorage.getItem("dato")) {
@@ -43,8 +55,10 @@ function comprobaciónRegistro(){
     document.querySelector("main").appendChild(usuarioNuevo)}
 }
 
+// funcionamiento de la página
+
 document.addEventListener("DOMContentLoaded", function() { 
-    // this function runs when the DOM is ready, i.e. when the document has been parsed
+
     document.querySelector(".ingresos").addEventListener("click", registroUsuario)
     
 });

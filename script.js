@@ -20,7 +20,7 @@ class Prestamo {
     }
 }
 
-// Array
+// Array para guardar prestamos
 
 let prestamos = []
 
