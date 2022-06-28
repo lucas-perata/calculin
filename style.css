@@ -6,8 +6,7 @@
 
 :root {
     --color-white: #fff; 
-    --color-main: rgb(227, 35, 35); 
-
+    --color-main: rgb(139, 149, 201); 
     --padding: 2rem;
 
     --radio: 5px;
@@ -94,7 +93,6 @@ input[type=number]{
     gap: 2rem;
     flex-wrap: wrap;
     margin-top: 1rem;
-
 }
 
 
@@ -102,7 +100,22 @@ button.eliminar {
     margin-top: 1rem;
 }
 
+.prestamo-info {
+    border-style: solid;
+    border-color: var(--color-main);
+    border-radius: var(--radio);
+    background-color: rgb(71, 137, 120);
+    color: var(--color-white);
+    text-align: center;
+    padding: 0.5rem;
+}
 
+.prestamo-info:hover{
+    transform: scale(1.1);
+    transition: transform 500ms;
+}
+
+    
 footer{
     background-color: var(--color-main);
     position: absolute;
