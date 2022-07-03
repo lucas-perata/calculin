@@ -89,7 +89,7 @@ function eliminarPrestamos(){
             if (result.isConfirmed) {
               Swal.fire(
                 '¡Borradas!',
-                'Tus simulaciones fueron borradas',
+                'Tus simulaciones fueron eliminadas',
                 'success',  document.querySelector(".resumen").innerHTML = " ",
                 document.querySelector(".eliminar").remove(),
                 prestamos.length = [], 
@@ -97,7 +97,6 @@ function eliminarPrestamos(){
               )
             }
           })
-      
     })}
 }
 
