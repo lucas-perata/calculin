@@ -24,6 +24,10 @@ class Prestamo {
 
 let prestamos = []
 
+//Contador de préstamos 
+
+let numero = 1;
+
  // Esta función toma los numeros registrados por el usuario e imprime los préstamos en el HTML
 
 function calculoPrestamos(monto, cuotas, interes){
@@ -39,7 +43,7 @@ function calculoPrestamos(monto, cuotas, interes){
         resultadosContainer.innerHTML = `
                                 <div class="resumen">
                                     <div class="prestamo-info"> 
-                                <h3 id="info-prestamo">Prestamo ${document.querySelectorAll("#info-prestamo").length + 1} </h3>
+                                <h3 id="info-prestamo">Prestamo ${numero} </h3>
                                 <div>Monto a solicitar: ${prestamo.monto} </div>
                                 <div>Intereses: ${prestamo.calcularIntereses()}</div>
                                 <div>Total a pagar: ${prestamo.calcularMontoFinal()}</div>
@@ -91,6 +95,7 @@ function simulacionPrestamo() {
         } 
     else {
         calculoPrestamos(monto, cuotas, interes)
+        numero++
         reseteoCalculadora()
     }
 };
