@@ -24,7 +24,7 @@ class Prestamo {
 
 let prestamos = []
 
-//Contador de préstamos 
+//Contador de préstamos para DOM 
 
 let numero = 1;
 
