@@ -25,7 +25,7 @@ function registroUsuario(){
         localStorage.setItem('dato', JSON.stringify(datos))
     }
     else {
-        alert("Comprueba la información solicitada")
+        swal("Comprueba la información solicitada")
     }
 }
 

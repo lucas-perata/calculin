@@ -77,8 +77,27 @@ function eliminarPrestamos(){
     document.querySelector(".resultados").appendChild(buttonPrestamos)
 
     document.querySelector(".eliminar").addEventListener("click", () => {
-        document.querySelector(".resumen").innerHTML = " "
-        document.querySelector(".eliminar").remove()
+        Swal.fire({
+            title: '¿Estás seguro?',
+            text: "No es posible revertir el proceso.",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sí, estoy seguro'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire(
+                '¡Borradas!',
+                'Tus simulaciones fueron borradas',
+                'success',  document.querySelector(".resumen").innerHTML = " ",
+                document.querySelector(".eliminar").remove(),
+                prestamos.length = [], 
+                numero = 1
+              )
+            }
+          })
+      
     })}
 }
 
@@ -91,7 +110,7 @@ function simulacionPrestamo() {
     let interes = document.querySelector(".interes").value
 
     if(!monto || !cuotas || interes == "") {
-        alert("Completa todos los campos solicitados")
+        Swal.fire("Completa todos los campos solicitados")
         } 
     else {
         calculoPrestamos(monto, cuotas, interes)
