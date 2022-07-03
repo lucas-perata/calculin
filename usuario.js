@@ -22,21 +22,17 @@ function registroUsuario(){
         let usuario = new Usuario(nombre, email)
         console.log(usuario)
         datos.push(usuario)
-        sessionStorage.setItem('dato', JSON.stringify(datos))
+        localStorage.setItem('dato', JSON.stringify(datos))
     }
     else {
         alert("Comprueba la información solicitada")
     }
 }
 
-// Función que analiza si hay informacion sobre el usuario en storage
+// Plantilla para usuarios nuevos 
 
-function comprobaciónRegistro(){
-    if (sessionStorage.getItem("dato")) {
-        console.log("Usuario reconocido")
-        // Se carga la página normalmente
-    }
-    else {  let usuarioNuevo = document.createElement("div")
+function plantillaUsuario(){
+    let usuarioNuevo = document.createElement("div")
     
     usuarioNuevo.innerHTML = `
                         <section class="formulario-usuario">
@@ -53,8 +49,15 @@ function comprobaciónRegistro(){
                         </section>   `
 
     document.querySelector("main").innerHTML = " "
-    document.querySelector("main").appendChild(usuarioNuevo)}
+    document.querySelector("main").appendChild(usuarioNuevo)
 }
+
+// Función que analiza si hay informacion sobre el usuario en storage
+
+function comprobaciónRegistro(){
+     localStorage.getItem("dato") ? console.log("Usuario reconocido"): plantillaUsuario()
+}
+
 
 // funcionamiento de la página - Espera a que esté todo cargado
 
