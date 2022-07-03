@@ -23,9 +23,10 @@ function registroUsuario(){
         console.log(usuario)
         datos.push(usuario)
         localStorage.setItem('dato', JSON.stringify(datos))
+        document.location.reload()
     }
     else {
-        swal("Comprueba la información solicitada")
+        Swal.fire("Comprueba la información solicitada")
     }
 }
 
@@ -42,8 +43,8 @@ function plantillaUsuario(){
                             <label for="nombre">Nombre:</label>
                             <input class="nombre" type="text"> <br>
                             <label for="mail">Email:</label>
-                            <input type="email" class="email"> <br>
-                            <button class="ingreso" type="submit">Ingresar</button>
+                            <input type="text" class="email"> <br>
+                            <button class="ingreso" type="button">Ingresar</button>
                             </form>
                             </div>
                         </section>   `
@@ -66,5 +67,6 @@ document.addEventListener("DOMContentLoaded", function() {
     document.querySelector(".ingreso").addEventListener("click", registroUsuario)
     
 });
+
 
 comprobaciónRegistro()
