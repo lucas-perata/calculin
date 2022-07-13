@@ -55,9 +55,14 @@ section {
 }
 
 .cotizaciones {
-    background-color: aliceblue;
     min-width: 37vw;
-    border-style: double;
+}
+
+div.referencias {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    column-gap: 3rem;
 }
 
 .formulario {

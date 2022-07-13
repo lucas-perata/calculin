@@ -122,4 +122,3 @@ function simulacionPrestamo() {
 
 document.querySelector('.calculo').addEventListener("click", simulacionPrestamo)
 
-
