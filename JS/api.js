@@ -14,10 +14,10 @@ fetch("https://api.bluelytics.com.ar/v2/latest")
     .then(data=> {return data.json()})
     .then(dolar => {blue.innerHTML += dolar.blue.value_avg})
 
-fetch("/data.json")
+fetch("../JSON/data.json")
     .then( (res) => { return res.json()})
     .then( (tasas) => {prestamo.innerHTML += tasas.tasas.tasa_prestamo})
     
-fetch("/data.json")
+fetch("../JSON/data.json")
     .then( (res) => { return res.json()})
     .then( (tasas) => {inflacion.innerHTML += tasas.tasas.inflacion})

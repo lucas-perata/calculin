@@ -55,7 +55,8 @@ section {
 }
 
 .cotizaciones {
-    min-width: 37vw;
+    min-width: 40vw;
+    text-align: center;    
 }
 
 div.referencias {
@@ -63,6 +64,7 @@ div.referencias {
     justify-content: center;
     padding: 1rem;
     column-gap: 3rem;
+    flex-wrap: wrap;
 }
 
 .formulario {
