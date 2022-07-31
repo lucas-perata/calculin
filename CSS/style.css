@@ -58,9 +58,19 @@ section {
 div.referencias {
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 1rem;
     column-gap: 3rem;
     flex-wrap: wrap;
+}
+
+.cotizaciones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 5vw;
 }
 
 form {
@@ -72,6 +82,7 @@ form {
 input {
     border: 1px solid black;
     border-radius: var(--radio);
+    max-width: fit-content;
 }
 
 input[type=number]{
@@ -88,23 +99,25 @@ h2 {
     font-size: 1.5rem;
 }
 
+.formulario {
+    display: flex;
+    justify-content: center;
+}
+
 .resultados {
     display: flex;
     flex-direction: column;
     max-width: 968px;
-    padding: var(--padding);
     align-items: center;
-    padding-bottom: 2.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
+    margin-top: 2rem;
 }
 
 .resumen {
-    flex-direction: row;
     display: flex;
     justify-content: center;
     gap: 2rem;
     flex-wrap: wrap;
-    margin-top: 1rem;
 }
 
 
@@ -141,10 +154,9 @@ footer{
     font-weight: 1000;
 }
 
-.info,
  .cotizaciones,
  .formulario{
-    margin-top: 1rem;
+    margin-top: 0.8rem;
 }
 
 .formulario-usuario {
@@ -162,6 +174,7 @@ button {
   font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
   border-radius: 6px;
   border: none;
+  max-width: fit-content;
 
   color: #fff;
   background: linear-gradient(180deg, #4B91F7 0%, #367AF6 100%);

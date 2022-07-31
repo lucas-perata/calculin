@@ -53,16 +53,20 @@ function plantillaUsuario(){
     document.querySelector("main").appendChild(usuarioNuevo)
 }
 
-// Función que analiza si hay informacion sobre el usuario en storage
+// Función que analiza si hay informacion sobre el usuario en storage y da un mensaje de bienvenida
 
 function comprobaciónRegistro(){
     localStorage.getItem("dato") ? console.log("Usuario reconocido"): plantillaUsuario() 
      
-    let bienvenida = document.querySelector(".bienvenida")
     let nombreUsuario = JSON.parse(localStorage.getItem("dato"))
-    bienvenida.innerHTML = `¡${nombreUsuario[0].nombre}, bienvenido a Calculin!`
-}
 
+    Swal.fire({
+        title: `¡${nombreUsuario[0].nombre}, bienvenido a Calculin!`,
+        text: "Usa esta calculadora para ver cómo los pagos de tu préstamo personal se desglosan mes a mes.",
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Comenzar'})
+}
 
 // funcionamiento de la página - Espera a que esté todo cargado
 
