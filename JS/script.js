@@ -56,13 +56,14 @@ function calculoPrestamos(monto, cuotas, interes){
         document.querySelector(".resumen").appendChild(resultadosContainer)
 
         eliminarPrestamos()
+        bottonMail()
 }
 
 // Limpiar calculadora 
 
 function reseteoCalculadora(){
-    let a = document.querySelector("form")
-    a.reset()
+    let calcu = document.querySelector("form")
+    calcu.reset()
 }
 
 // Boton para eliminar los préstamos
@@ -70,11 +71,13 @@ function reseteoCalculadora(){
 function eliminarPrestamos(){
 
     if (!document.querySelector(".eliminar")){
-    let buttonPrestamos = document.createElement("div")
+    let borradoPrestamos = document.createElement("div")
 
-    buttonPrestamos.innerHTML = `<button class="eliminar">Eliminar</button> `
+    borradoPrestamos.classList.add("botones-prestamos")
 
-    document.querySelector(".resultados").appendChild(buttonPrestamos)
+    borradoPrestamos.innerHTML += `<button class="eliminar">Eliminar</button> `
+
+    document.querySelector(".resultados").appendChild(borradoPrestamos)
 
     document.querySelector(".eliminar").addEventListener("click", () => {
         Swal.fire({
@@ -98,8 +101,54 @@ function eliminarPrestamos(){
               )
             }
           })
-    })}
+    }
+    )}
 }
+
+function bottonMail(){
+
+    if (!document.querySelector(".enviar") && document.querySelector(".resumen")){
+        
+        let envioMails = document.createElement("div")
+    
+        envioMails.innerHTML = `<button class="enviar">Enviar a mi mail</button> `
+
+        document.querySelector(".resultados").appendChild(envioMails)
+        
+        document.querySelector(".enviar").addEventListener("click", () => { 
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: "Se enviará un mail a la dirección registrada.",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, estoy seguro'
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  Swal.fire(
+                    'Enviadas!',
+                    'Tus simulaciones fueron enviadas',
+                    'success',  enviarMail()
+                  )
+                }
+              })
+        })
+        
+    }
+}
+
+function enviarMail(){
+    Email.send({
+        SecureToken : "D54AF67C01A0B222512EF770336ED7AAE8E3",
+        To : 'lucas.perata@hotmail.com',
+        From : "lucas.perata@hotmail.com",
+        Subject : "Préstamos consultados",
+        Body : "And this is the body"
+    });
+}
+
+
 
 // Funcion final que engloba los procedimientos de la página
 

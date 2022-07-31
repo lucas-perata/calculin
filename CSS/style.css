@@ -177,6 +177,11 @@ button:hover {
 
 .eliminar {
     background: linear-gradient(180deg, #f74b4b 0%, #f64d36 100%);
+}
 
+.botones-prestamos {
+    display:flex;
+    align-items: center;
+    flex-direction: row;
 }
 

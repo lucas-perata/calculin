@@ -36,7 +36,7 @@ function plantillaUsuario(){
     let usuarioNuevo = document.createElement("div")
     
     usuarioNuevo.innerHTML = `
-                        <section class="formulario-usuario">
+                        <section class="formulario usuario">
                             <div class="container">
                                 <h2>Ingreso:</h2>
                             <form name="usuarios" action="">
@@ -56,13 +56,11 @@ function plantillaUsuario(){
 // Función que analiza si hay informacion sobre el usuario en storage
 
 function comprobaciónRegistro(){
-     localStorage.getItem("dato") ? console.log("Usuario reconocido"): plantillaUsuario() 
-     let bienvenida = document.querySelector(".bienvenida")
-
-
-let usuaris = JSON.parse(localStorage.getItem("dato"))
-
-bienvenida.innerHTML = `¡${usuaris[0].nombre}, bienvenido a Calculin!`
+    localStorage.getItem("dato") ? console.log("Usuario reconocido"): plantillaUsuario() 
+     
+    let bienvenida = document.querySelector(".bienvenida")
+    let nombreUsuario = JSON.parse(localStorage.getItem("dato"))
+    bienvenida.innerHTML = `¡${nombreUsuario[0].nombre}, bienvenido a Calculin!`
 }
 
 
