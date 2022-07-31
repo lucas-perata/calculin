@@ -67,10 +67,10 @@ div.referencias {
     flex-wrap: wrap;
 }
 
-.formulario {
+form {
     display: flex;
-    flex-direction: row;
-    padding: var(--padding);
+    flex-direction: column;
+    gap: 6px;
 }
 
 form {
