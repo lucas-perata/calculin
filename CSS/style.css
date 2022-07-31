@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-size: large;
 }
 
 :root {
@@ -54,11 +55,6 @@ section {
     min-width: 40vw;
 }
 
-.cotizaciones {
-    min-width: 40vw;
-    text-align: center;    
-}
-
 div.referencias {
     display: flex;
     justify-content: center;
@@ -73,10 +69,6 @@ form {
     gap: 6px;
 }
 
-form {
-    column-gap: 20px;
-}
-
 input {
     border: 1px solid black;
     border-radius: var(--radio);
@@ -86,6 +78,14 @@ input[type=number]{
     -webkit-appearance: none;
      margin: 0;
     -moz-appearance: textfield;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
 }
 
 .resultados {
@@ -141,8 +141,10 @@ footer{
     font-weight: 1000;
 }
 
-.info{
-    padding: var(--padding);
+.info,
+ .cotizaciones,
+ .formulario{
+    margin-top: 1rem;
 }
 
 .formulario-usuario {
@@ -179,9 +181,4 @@ button:hover {
     background: linear-gradient(180deg, #f74b4b 0%, #f64d36 100%);
 }
 
-.botones-prestamos {
-    display:flex;
-    align-items: center;
-    flex-direction: row;
-}
 
