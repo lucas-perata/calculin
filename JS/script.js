@@ -36,7 +36,7 @@ function calculoPrestamos(monto, cuotas, interes){
 
         prestamos.push(prestamo)
         
-        localStorage.setItem('prestamo', JSON.stringify(prestamos))
+        sessionStorage.setItem('prestamo', JSON.stringify(prestamos))
 
         let resultadosContainer = document.createElement("div")
 
@@ -93,7 +93,8 @@ function eliminarPrestamos(){
                 'success',  document.querySelector(".resumen").innerHTML = " ",
                 document.querySelector(".eliminar").remove(),
                 prestamos.length = [], 
-                numero = 1
+                numero = 1, 
+                sessionStorage.removeItem('prestamo')
               )
             }
           })

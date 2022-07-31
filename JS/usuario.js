@@ -56,7 +56,13 @@ function plantillaUsuario(){
 // Función que analiza si hay informacion sobre el usuario en storage
 
 function comprobaciónRegistro(){
-     localStorage.getItem("dato") ? console.log("Usuario reconocido"): plantillaUsuario()
+     localStorage.getItem("dato") ? console.log("Usuario reconocido"): plantillaUsuario() 
+     let bienvenida = document.querySelector(".bienvenida")
+
+
+let usuaris = JSON.parse(localStorage.getItem("dato"))
+
+bienvenida.innerHTML = `¡${usuaris[0].nombre}, bienvenido a Calculin!`
 }
 
 
@@ -67,6 +73,8 @@ document.addEventListener("DOMContentLoaded", function() {
     document.querySelector(".ingreso").addEventListener("click", registroUsuario)
     
 });
+   
+
 
 
 comprobaciónRegistro()
