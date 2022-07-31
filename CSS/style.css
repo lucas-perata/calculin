@@ -107,15 +107,14 @@ h2 {
 .resultados {
     display: flex;
     flex-direction: column;
-    max-width: 968px;
     align-items: center;
+    max-width: 968px;
     margin-bottom: 3rem;
     margin-top: 2rem;
 }
 
 .resumen {
     display: flex;
-    justify-content: center;
     gap: 2rem;
     flex-wrap: wrap;
 }
@@ -129,9 +128,11 @@ button.eliminar {
     border-radius: var(--radio);
     background-color: rgb(214, 237, 255);
     color: black;
-    text-align: center;
     padding: 0.5rem;
-    box-shadow: 0px 0.1px 5px;
+    box-shadow: 0px 0.1px 3px;
+    max-width: 11vw;
+    max-height: 22vh;
+    overflow: scroll;
 }
 
 .prestamo-info:hover{
@@ -174,7 +175,7 @@ button {
   font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
   border-radius: 6px;
   border: none;
-  max-width: fit-content;
+  max-width: 9vw;
 
   color: #fff;
   background: linear-gradient(180deg, #4B91F7 0%, #367AF6 100%);
